@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Composer update" type="ShConfigurationType" folderName="Composer">
+    <option name="SCRIPT_PATH" value="/usr/local/bin/docker-compose" />
+    <option name="SCRIPT_OPTIONS" value="exec -T php composer update" />
+    <option name="INTERPRETER_PATH" value="" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <method v="2" />
+  </configuration>
+</component>

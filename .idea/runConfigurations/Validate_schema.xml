@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Validate schema" type="ShConfigurationType" folderName="Database">
+    <option name="SCRIPT_PATH" value="/usr/local/bin/docker-compose" />
+    <option name="SCRIPT_OPTIONS" value="exec -T php composer ci:schema-validate" />
+    <option name="INTERPRETER_PATH" value="" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <method v="2" />
+  </configuration>
+</component>
