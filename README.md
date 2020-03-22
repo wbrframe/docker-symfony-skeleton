@@ -1,6 +1,6 @@
-# Docker Skeleton for new Symfony projects
+# Docker Skeleton for new Symfony 5 projects
 
-**Skeleton** - designed to quickly deploy environments for new Symfony projects. Сontains a minimal stack for begin development.
+**Skeleton** - designed to quickly deploy environments for new Symfony 5 projects. Сontains a minimal stack for begin development.
 
 ### Environment
 - nginx 1.17

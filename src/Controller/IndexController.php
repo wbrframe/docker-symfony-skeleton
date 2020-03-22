@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Traits\EntityManagerTrait;
+use App\Traits\TwigTrait;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController
 {
     use EntityManagerTrait;
+    use TwigTrait;
 
     /**
      * @return Response
@@ -24,6 +26,8 @@ class IndexController
     {
         $databaseName = $this->em->getConnection()->getDatabase();
 
-        return new Response(\sprintf('Database `%s` is ready.', $databaseName));
+        return new Response($this->twig->render('index.html.twig', [
+            'content' => \sprintf('Database `%s` is ready.', $databaseName),
+        ]));
     }
 }
