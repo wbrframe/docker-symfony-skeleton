@@ -22,7 +22,7 @@ Example:
 
     php7_symfony5_lts
     php8_symfony6_lts
-    php8_symfony6
+    php8_symfony7
 
 ### Installation
 
