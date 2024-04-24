@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="logo.jpg" alt="Symfony Skeleton Logo" style="height: 100px">
+  <img src="https://github.com/wbrframe/wbrframe/blob/main/repository/docker-symfony-skeleton/assets/logo.jpg" alt="Symfony Skeleton Logo" style="height: 100px">
 </p>
 
-**Skeleton** is crafted to swiftly set up the environment for new Symfony projects. 
+**Skeleton** is crafted to swiftly set up the environment for new Symfony projects.
 
-Сontains a minimal stack for begin development: nginx, php, xdebug and minimal set symfony components for webapp type of project.
+Сontains a minimal stack for begin development: nginx, php, xdebug and minimal set symfony components for type of project as microservice, console application or API.
 
 ### Requirements
 
