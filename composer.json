@@ -1,0 +1,91 @@
+{
+    "name": "wbrframe/docker-symfony-skeleton",
+    "description": "Skeleton is crafted to swiftly set up the environment for new Symfony projects. ",
+    "authors": [{
+        "name": "Vaskevich Yevhenii",
+        "email": "wbrframe@gmail.com"
+    }],
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "symfony/console": "6.4.*",
+        "symfony/dotenv": "6.4.*",
+        "symfony/flex": "^2",
+        "symfony/framework-bundle": "6.4.*",
+        "symfony/runtime": "6.4.*",
+        "symfony/yaml": "6.4.*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.54",
+        "phpstan/phpstan": "^1.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ],
+        "ci:pack": [
+            "@ci:code-style",
+            "@ci:code-style-fix",
+            "@ci:statis-analysis",
+            "@ci:lint-yaml",
+            "@ci:composer-validate",
+            "@ci:security-check"
+        ],
+        "ci:code-style": "vendor/bin/php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php -v",
+        "ci:code-style-fix": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -v",
+        "ci:statis-analysis": "vendor/bin/phpstan analyse",
+        "ci:lint-yaml": [
+            "bin/console lint:yaml --parse-tags config/"
+        ],
+        "ci:composer-validate": "@composer validate --no-check-all --strict",
+        "ci:security-check": "security-checker --path=/app"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.4.*"
+        }
+    }
+}
